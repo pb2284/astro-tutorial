@@ -1,4 +1,7 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+
 const pageTitle = "About Me";
 
 const identity = {
@@ -12,7 +15,9 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
-const skillColor = "red";
+const skillColor = "crimson";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 <html lang="en">
 	<head>
@@ -22,20 +27,20 @@ const skillColor = "red";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
-        <style>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
       h1 {
         color: purple;
         font-size: 4rem;
       }
       .skill {
         color: var(--skillColor);
-        font-weight: bold;
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
       }
     </style>
 	</head>
 	<body>
-        <p><a href="/">Home</a></p>
-        <p><a href="/blog">Blog</a></p>
+        <Navigation />
 		<h1>About</h1>
 		<p>A website for learning how to use Astro</p>
         <p>Here are a few facts about me:</p>
