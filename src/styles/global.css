@@ -82,4 +82,13 @@ h1 {
 
 .published {
   margin-top: 0;
+  margin-bottom: 0;
+}
+
+#tags-ctr {
+  display: flex;
+}
+
+.tag-link {
+  margin: 2rem 1rem;
 }
